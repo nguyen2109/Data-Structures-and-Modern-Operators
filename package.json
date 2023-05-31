@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "prettier": "2.8.8"
+  },
+  "name": "starter",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "start": "nodemon script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyen2109/Data-Structures-and-Modern-Operators.git"
+  },
+  "author": "Khoa Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nguyen2109/Data-Structures-and-Modern-Operators/issues"
+  },
+  "homepage": "https://github.com/nguyen2109/Data-Structures-and-Modern-Operators#readme",
+  "description": "",
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
