@@ -12,10 +12,6 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
   openingHours: {
     thu: {
       open: 12,
@@ -30,22 +26,38 @@ const restaurant = {
       close: 24,
     },
   },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  orderDelevery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Đơn hàng của bạn là ${this.starterMenu[starterIndex]} và ${this.mainMenu[mainIndex]} sẽ giao tại ${address} vào lúc ${time}`,
+    );
+  },
 };
+restaurant.orderDelevery({
+  starterIndex: 2,
+  mainIndex: 0,
+  time: '23:15',
+  address: 'Trung Văn , Hà Nội',
+});
 
-const arr = [1, 2, 3];
-const [x, y, z] = arr;
+//Default Value
+const { menu = [], starterMenu: starters = [] } = restaurant;
 
-//console.log(x, y, z); //1 2 3
+//console.log(menu, starters);
+//[] [ 'Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad' ]
 
-//console.log(arr); //[ 1, 2, 3 ]
+//Mutating variabels
+// let a = 111;
+// let b = 999;
+// const obj = { a: 222, b: 222, c: 222 };
 
-let [main, , secondary] = restaurant.categories; //Italian Vegetarian
-[main, secondary] = [secondary, main]; //Vegetarian Italian
-console.log(main, secondary);
+// ({ a, b } = obj);
+// // console.log(a, b); //222 222
 
-const [starter, mainCourse] = restaurant.order(2, 0);
-console.log(starter, mainCourse);
-
-const nested = [2, 3, [5, 6]];
-const [a, b, [c, d]] = nested;
-console.log(a, b, c, d);
+//Nested Obj
+// const {
+//   sat: { open: o, close: c },
+// } = justHours;
+// console.log(o, c);
