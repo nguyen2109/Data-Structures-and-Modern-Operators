@@ -43,31 +43,26 @@ const restaurant = {
     console.log(thanhphanchinh, thanhphankhac);
   },
 };
-restaurant.orderPizza('Nấm', 'Thịt', 'Đậu', 'Hành');
-restaurant.orderPizza('Nấm');
-// SPREAD bởi vì dấu ... nằm bên phải của dấu =
-const arr = [1, 2, ...[3, 4]];
 
-// REST bởi vì dấu ... nằm bên trái của dấu =
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-// console.log(a, b, others);
-
-const [pizza, risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-//console.log(otherFood);
-
-//Object
-const { sat, ...otherDays } = restaurant.openingHours;
-//console.log(sat);
-
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  return console.log(sum);
+const rest1 = {
+  name: 'Nguyên',
+  numGuest: 10,
 };
-add(2, 5);
-add(1, 2, 3, 4, 5);
+const rest2 = {
+  name: 'Ỉn',
+  owner: 'Nguyên',
+};
+console.log('-----OR-----');
+// rest1.numGuest ||= 10;
+// rest2.numGuest ||= rest1.numGuest;
+console.log('-----Nullish-----');
+//?? sẽ chỉ dành cho null hoặc undefinded , nếu có null hoặc undefinded thì nó sẽ lấy giá trị còn lại trong điều kiện
+// rest1.numGuest ??= 10;
+// rest2.numGuest ??= rest1.numGuest;
+console.log('-----&&-----');
+// rest1.owner = rest1.owner && 'Chủ sở hữu 2';
+// rest2.owner = rest2.owner && 'Chủ sở hữu 2';
+rest1.owner &&= 'Chủ sở hữu 2';
+rest2.owner &&= 'Chủ sở hữu 2';
+//{ name: 'Nguyên', numGuest: 10, owner: undefined } { name: 'Ỉn', owner: 'Chủ sở hữu 2' }
+console.log(rest1, rest2);

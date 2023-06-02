@@ -43,31 +43,14 @@ const restaurant = {
     console.log(thanhphanchinh, thanhphankhac);
   },
 };
-restaurant.orderPizza('Nấm', 'Thịt', 'Đậu', 'Hành');
-restaurant.orderPizza('Nấm');
-// SPREAD bởi vì dấu ... nằm bên phải của dấu =
-const arr = [1, 2, ...[3, 4]];
+console.log('-----OR-----');
+console.log(3 || 'Jonas');
+console.log(0 || 'jonas');
+console.log(undefined || null);
+console.log(3 || '');
 
-// REST bởi vì dấu ... nằm bên trái của dấu =
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-// console.log(a, b, others);
-
-const [pizza, risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-//console.log(otherFood);
-
-//Object
-const { sat, ...otherDays } = restaurant.openingHours;
-//console.log(sat);
-
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  return console.log(sum);
-};
-add(2, 5);
-add(1, 2, 3, 4, 5);
+console.log('-----&&-----');
+console.log(3 && 'Jonas');
+console.log(0 && 'jonas');
+console.log(undefined && null);
+console.log(3 && '');
