@@ -51,8 +51,6 @@ const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 
 const { team1, x: draw, team2 } = game.odds;
 
-const a = { ...game.scored };
-
 const printGoals = function (...listPlayer) {
   console.log(...listPlayer, ...game.score);
 };
